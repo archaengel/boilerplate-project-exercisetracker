@@ -7,4 +7,10 @@ mongoose.connect(
     useNewUrlParse: true,
     dbname: 'exercisetracker'
   }
-);
+)
+.then(() => console.log("Connection successful"))
+.catch(error => console.log(error.message));
+      
+
+
+/* ------------------------------------Exports-----------*/

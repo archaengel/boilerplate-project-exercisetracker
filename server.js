@@ -18,6 +18,11 @@ app.get('/', (req, res) => {
 });
 
 
+// new user API
+app.post('/api/exercise/new-user', (req, res) => {
+  res.send(req.body.username)
+});
+
 // Not found middleware
 app.use((req, res, next) => {
   return next({status: 404, message: 'not found'})
