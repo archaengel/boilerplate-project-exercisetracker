@@ -1,9 +1,10 @@
 dependencies:
+  animal-ids: 1.0.1
   body-parser: 1.18.3
   cors: 2.8.5
   express: 4.16.4
   mongodb: 3.1.13
-  mongoose: 5.4.16
+  mongoose: 5.4.18
   shortid: 2.2.14
 packages:
   /accepts/1.3.5:
@@ -15,6 +16,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-63d99gEXI6OxTopywIBcjoZ0a9I=
+  /animal-ids/1.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-B5aNFN/kjhDaGbndqXYG5/x6p3ipWUdXLVlFOtjq3ZDVmemEz3PNmyTSxBGmqVuXeneVJqz02D90OskDMMHa9Q==
   /array-flatten/1.1.1:
     dev: false
     resolution:
@@ -52,6 +57,12 @@ packages:
       node: '>=0.6.19'
     resolution:
       integrity: sha512-9Aeai9TacfNtWXOYarkFJRW2CWo+dRon+fuLZYJmvLV3+MiUp0bEI6IAZfXEIg7/Pl/7IWlLaDnhzTsD81etQA==
+  /bson/1.1.1:
+    dev: false
+    engines:
+      node: '>=0.6.19'
+    resolution:
+      integrity: sha512-jCGVYLoYMHDkOsbwJZBCqwMHyH4c+wzgI9hG7Z6SZJRXWr+x58pdIbm2i9a/jFGCkRJqRUr8eoI7lDWa0hTkxg==
   /bytes/3.0.0:
     dev: false
     engines:
@@ -296,10 +307,10 @@ packages:
       mongoose: '*'
     resolution:
       integrity: sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
-  /mongoose/5.4.16:
+  /mongoose/5.4.18:
     dependencies:
       async: 2.6.1
-      bson: 1.1.0
+      bson: 1.1.1
       kareem: 2.3.0
       mongodb: 3.1.13
       mongodb-core: 3.1.11
@@ -314,7 +325,7 @@ packages:
     engines:
       node: '>=4.0.0'
     resolution:
-      integrity: sha512-1lGuXBBxs8KloHMe0mZGpC8L+l+flRFh3IoNf2lRmSaSMrpgEjrBHm6Aypfe2s+Y5xO0h7gua3TAZUplWpMxSw==
+      integrity: sha512-yiSd/1OYYfK9EuH6NFO/NnTD4AZPIpRY1i58xUssgCGsYDX3qEYcdgFeknB5OArMB1Ny3wwMW8xiip2I5pgszw==
   /mpath/0.5.1:
     dev: false
     engines:
@@ -541,9 +552,10 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  animal-ids: ^1.0.1
   body-parser: ^1.18.3
   cors: ^2.8.5
   express: ^4.16.4
   mongodb: ^3.1.11
-  mongoose: ^5.4.16
+  mongoose: ^5.4.18
   shortid: ^2.2.14

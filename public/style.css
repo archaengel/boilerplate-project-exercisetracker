@@ -7,12 +7,21 @@ body {
   font-family:sans-serif;
   margin: 25px;
   color: #222;
-  background-color: #f5f5f5;
+  background: repeating-linear-gradient(
+    127deg,
+    #30f 0rem,
+    #30f 20rem,
+    #999 20.1rem,
+    #999 20.2rem,
+    #ccc 26rem,
+    #ccc 200rem
+    );
+  height: 100vh;
 }
 
 h1 {
   font-weight: bold;
-  
+  color: #000;
 }
 
 .bold {
@@ -21,16 +30,19 @@ h1 {
 
 p {
   max-width: 900px;
+
 }
 
 form {
   margin-bottom: 25px;
   padding: 15px;
-  background-color: #87D37C;
+  background-color: #60f;
   display: inline-block;
   width: 100%;
   max-width: 340px;
   border-radius: 5px;
+  box-shadow: 0rem 1.7rem 1.6rem -1.5rem;
+  z-index: 10;
 }
 
 input {

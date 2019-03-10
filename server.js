@@ -17,11 +17,10 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html')
 });
 
+// use api router
+const apiRouter = require('./routes/api')
+app.use('/api/exercise/', apiRouter)
 
-// new user API
-app.post('/api/exercise/new-user', (req, res) => {
-  res.send(req.body.username)
-});
 
 // Not found middleware
 app.use((req, res, next) => {
