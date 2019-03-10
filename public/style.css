@@ -1,3 +1,8 @@
+:root {
+  --light-yellow: #ffffcc;
+  --yellow: #ffc933;
+  --main-blue: #000000;
+}
 
 * {
   box-sizing: border-box;
@@ -6,22 +11,19 @@
 body {
   font-family:sans-serif;
   margin: 25px;
-  color: #222;
+  color: var(--yellow);
   background: repeating-linear-gradient(
     127deg,
-    #30f 0rem,
-    #30f 20rem,
-    #999 20.1rem,
-    #999 20.2rem,
-    #ccc 26rem,
-    #ccc 200rem
+    var(--main-blue) 0rem,
+    var(--main-blue) 30rem,
+    var(--yellow) 30.05rem,
+    var(--yellow) 200rem
     );
   height: 100vh;
 }
 
 h1 {
   font-weight: bold;
-  color: #000;
 }
 
 .bold {
@@ -30,19 +32,20 @@ h1 {
 
 p {
   max-width: 900px;
-
+  mix-blend-mode: difference;
 }
 
+
 form {
+  background-color: var(--main-blue);
+  border: var(--yellow) solid 0.2rem;
   margin-bottom: 25px;
+  position: relative;
   padding: 15px;
-  background-color: #60f;
   display: inline-block;
   width: 100%;
   max-width: 340px;
   border-radius: 5px;
-  box-shadow: 0rem 1.7rem 1.6rem -1.5rem;
-  z-index: 10;
 }
 
 input {
@@ -71,6 +74,7 @@ input[type=submit]:hover {
 code {
   font-family: monospace;
   font-size: 1.2em;
-  background-color: #FFFEC4;
+  background-color: #333;
+  border-radius: 0.2rem;
   padding: 2px;
 }

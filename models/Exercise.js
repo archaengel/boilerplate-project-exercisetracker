@@ -21,7 +21,6 @@ const exerciseSchema = new Schema({
     type: Number,
   },
   date: {
-    default: () => Date.now(),
     type: Date,
   }
 });
@@ -35,7 +34,9 @@ exerciseSchema.pre('save', function(next) {
       return next(err)
     }
     this.username = foundUser.username
-    console.log(this.date)
+    !this.date
+    ? this.date = Date.now()
+    : this.date = Date.parse(this.date)
     next()
   })
 })

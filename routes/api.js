@@ -42,9 +42,60 @@ router.post('/add', (req, res, next) => {
     if (err) {
       next(err)
     } else {
+      savedExercise.date = savedExercise.date.toDateString()
       res.json(savedExercise)
     }
   })
-})
+});
+
+router.get('/users', (req, res, next) => {
+  User
+    .find({})
+    .sort({_id: 'asc'})
+    .select('-__v')
+    .exec((err, userList) => {
+    if (err) {
+      console.log(err)
+      return next(err)
+    } else {
+      res.json(userList)
+    }
+  })
+});
+
+router.get('/log',(req, res, next) => {
+  let startDate = req.query.from ? new Date(req.query.from) : 0
+  let endDate = req.query.to ? new Date(req.query.to) : new Date()
+  let limit = req.query.limit != undefined
+                ? parseInt(req.query.limit)
+                : Number.MAX_SAFE_INTEGER
+  
+  if (!req.query.userId) {
+    let err = new Error("userId is required")
+    next(err)
+  } else {
+    Exercise
+      .find({
+        userId: req.query.userId,
+        date: { $gte: startDate, $lte: endDate }
+      }, 'description duration date -_id')
+      .limit(limit)
+      .exec((err, exercises) => {
+      if (err) {
+        return next(err)
+      } else {
+        User
+          .findById(req.query.userId)
+          .select('-__v')
+          .exec((err, foundUser) => {
+            foundUser = foundUser.toObject()
+            foundUser.log = exercises
+            res.json(foundUser)
+        })
+      }
+    })
+  }
+  // res.send(req.originalUrl)
+});
 
 module.exports = router
